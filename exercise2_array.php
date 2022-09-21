@@ -35,7 +35,7 @@
 
     function isTriple(array $arrayNumbers)
     {
-
+        # var_export($triple) para que retorne o true ou false que "contén"
         for ($x = 0 and $x < count($arrayNumbers) - 2; $x < count($arrayNumbers); $x++) {
             if ($arrayNumbers[$x] == $arrayNumbers[$x + 1] and $arrayNumbers[$x] == $arrayNumbers[$x + 2]) {
                 return true;

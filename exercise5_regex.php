@@ -19,7 +19,7 @@
     <h2>Función deleteBlanks</h2>
     <?php
     // Función 2
-    $frase = "hola que tal estas      chamome ines";
+    $frase = "hola que tal estas  chamome ines";
     echo "$frase: <br>";
     deleteBlanks($frase);
 
@@ -36,7 +36,7 @@
 
     function deleteBlanks($string)
     {
-        echo preg_replace('/\s+/', '', $string);
+        echo preg_replace("/\s/", "", $string);
     }
     ?>
 </body>
