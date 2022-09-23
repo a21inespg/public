@@ -25,19 +25,36 @@
     <?php
     print_r($_REQUEST);
     if (isset($_REQUEST["submit"])) {
-        if (isset($_REQUEST["drink"])) {
-            if ($_REQUEST["units"]) {
-                echo "Todo ok";
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            if (empty($_REQUEST["drink"])) {
+                $drinkError = "You have to select a drink";
             } else {
-                echo "mal";
+                $drink = limpar($_REQUEST["drink"]);
+                echo "bebida ok";
             }
-        } else {
-            echo "mal";
+
+            if (empty($_REQUEST["units"])) {
+                $unitsError = "There is no number";
+            } else {
+                $units = limpar($_REQUEST["units"]);
+                echo "units ok";
+            }
+
+
+            $unit = limpar($_REQUEST["units"]);
         }
     } else {
         echo "mal";
     }
 
+
+    function limpar($dato)
+    {
+        $dato = trim($dato);
+        $dato = stripslashes($dato);
+        $dato = htmlspecialchars($dato);
+        return $dato;
+    }
 
 
 
